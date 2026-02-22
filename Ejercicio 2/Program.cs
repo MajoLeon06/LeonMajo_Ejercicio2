@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Design;
-
-Console.WriteLine("Hora: (0-23)");
+﻿Console.WriteLine("Hora: (0-23)");
 int hora = int.Parse(Console.ReadLine());
 Console.WriteLine("Día: (1-7)");
 int day = int.Parse(Console.ReadLine());
@@ -21,39 +19,52 @@ if ((hora >= 0 && hora <= 23) && (day >= 1 && day <= 7))
                     if (carnet == 1 && (hora >= 7 && hora <= 18))
                     {
                         Console.WriteLine("Acceso permitido");
+                        if (hora < 7 && hora > 18)
+                        {
+                            Console.WriteLine("¿Tiene autorización? 1:Si 2:No");
+                            int sino1 = int.Parse(Console.ReadLine());
+                            if (sino1 == 1)
+                            {
+                                Console.WriteLine("Acceso permitido\nPermiso de estudiante");
+                            }
+                            else if (sino1 == 2)
+                            {
+                                Console.WriteLine("Acceso denegado");
+                            }
+                        }
+                        else if (carnet == 2 && (hora >= 7 && hora <= 18))
+                        {
+                            Console.WriteLine("¿Tiene autorización? 1:Si 2:No");
+                            int autorizacion = int.Parse(Console.ReadLine());
+                            if (autorizacion == 1)
+                            {
+                                Console.WriteLine("Acceso permitido\nPermiso de estudiante");
+                            }
+                            else if (autorizacion == 2)
+                            {
+                                Console.WriteLine("Acceso denegado");
+                            }
+                        }
+                        else if (hora < 7 && hora > 18)
+                        {
+                            Console.WriteLine("¿Tiene autorización? 1:Si 2:No");
+                            int sino1 = int.Parse(Console.ReadLine());
+                            if (sino1 == 1)
+                            {
+                                Console.WriteLine("Acceso permitido\nPermiso de estudiante");
+                            }
+                            else if (sino1 == 2)
+                            {
+                                Console.WriteLine("Acceso denegado");
+                            }
+                        }
                     }
-                    else if (carnet == 2 && (hora >= 7 && hora <= 18))
+                    else
                     {
-                        Console.WriteLine("¿Tiene autorización? 1:Si 2:No");
-                        int autorizacion = int.Parse(Console.ReadLine());
-                        if (autorizacion == 1)
-                        {
-                            Console.WriteLine("Acceso permitido\nPermiso de estudiante");
-                        }
-                        else if (autorizacion == 2)
-                        {
-                            Console.WriteLine("Acceso denegado");
-                        }
-                    }
-                    else if (hora < 7 && hora > 18)
-                    {
-                        Console.WriteLine("¿Tiene autorización? 1:Si 2:No");
-                        int sino1 = int.Parse(Console.ReadLine());
-                        if (sino1 == 1)
-                        {
-                            Console.WriteLine("Acceso permitido\nPermiso de estudiante");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Acceso denegado");
-                        }
+                        Console.WriteLine("Acceso denegado");
                     }
                 }
-                else
-                {
-                    Console.WriteLine("Acceso denegado");
-                }
-                break;
+                    break;
             }
         case 2:
             {
