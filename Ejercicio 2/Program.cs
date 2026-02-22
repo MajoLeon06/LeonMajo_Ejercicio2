@@ -8,7 +8,7 @@ Console.WriteLine("ROL");
 Console.WriteLine("1:Estudiante\n2:Docente\n3:Técnico IT\n4:Visitante");
 Console.WriteLine("Ingrese opción:");
 int option = int.Parse(Console.ReadLine());
-if ((hora>=0 && hora<=23)&&(day>=1 && day<=7))
+if ((hora >= 0 && hora <= 23) && (day >= 1 && day <= 7))
 {
     switch (option)
     {
@@ -28,7 +28,7 @@ if ((hora>=0 && hora<=23)&&(day>=1 && day<=7))
                         int autorizacion = int.Parse(Console.ReadLine());
                         if (autorizacion == 1)
                         {
-                            Console.WriteLine("Acceso permitido");
+                            Console.WriteLine("Acceso permitido\nPermiso de estudiante");
                         }
                         else if (autorizacion == 2)
                         {
@@ -41,7 +41,7 @@ if ((hora>=0 && hora<=23)&&(day>=1 && day<=7))
                         int sino1 = int.Parse(Console.ReadLine());
                         if (sino1 == 1)
                         {
-                            Console.WriteLine("Acceso permitido");
+                            Console.WriteLine("Acceso permitido\nPermiso de estudiante");
                         }
                         else
                         {
@@ -59,17 +59,17 @@ if ((hora>=0 && hora<=23)&&(day>=1 && day<=7))
             {
                 Console.WriteLine("¿Carnet vigente? 1:Si 2:No");
                 int carnet = int.Parse(Console.ReadLine());
-                if (carnet==1)
+                if (carnet == 1)
                 {
                     Console.WriteLine("Acceso permitido\nPermiso de docente");
                 }
-                else if (carnet==2)
+                else if (carnet == 2)
                 {
                     Console.WriteLine("¿Tiene autorización? 1:Si 2:No");
                     int sino2 = int.Parse(Console.ReadLine());
                     if (sino2 == 1)
                     {
-                        Console.WriteLine("Acceso permitido");
+                        Console.WriteLine("Acceso permitido\nPermiso de docente");
                     }
                     else
                     {
@@ -80,15 +80,15 @@ if ((hora>=0 && hora<=23)&&(day>=1 && day<=7))
             }
         case 3:
             {
-                if ((hora>=7 && hora<=18)&&(day>=1 && day<=5))
+                if ((hora >= 7 && hora <= 18) && (day >= 1 && day <= 5))
                 {
-                    Console.WriteLine("Acceso permitido");
+                    Console.WriteLine("Acceso permitido\nAcceso completo");
                 }
                 else
                 {
                     Console.WriteLine("¿Tiene autorización? 1:Si 2:No");
                     int sino = int.Parse(Console.ReadLine());
-                    if (sino==1)
+                    if (sino == 1)
                     {
                         Console.WriteLine("Acceso permitido");
                     }
@@ -99,6 +99,39 @@ if ((hora>=0 && hora<=23)&&(day>=1 && day<=7))
                 }
                 break;
             }
+        case 4:
+            {
+                Console.WriteLine("Tiene autorización? 1:Si 2:No");
+                int autorizacion = int.Parse(Console.ReadLine());
+                if (autorizacion == 1)
+                {
+                    Console.WriteLine("¿Trae USB? 1:Si 2:No");
+                    int usb = int.Parse(Console.ReadLine());
+                    if (usb == 1)
+                    {
+                        Console.WriteLine("¿Viene acompañado? 1:Si 2:No");
+                        int company = int.Parse(Console.ReadLine());
+                        if (company == 1)
+                        {
+                            Console.WriteLine("Acceso permitido\nPermiso restringido");
 
+                        }
+                        else if (company == 2)
+                        {
+                            Console.WriteLine("Acceso denegado");
+                        }
+                    }
+                    else if (usb == 2)
+                    {
+                        Console.WriteLine("Acceso permitido\nPermiso restringido");
+                    }
+                }
+                break;
+            }
+        default:
+            {
+                Console.WriteLine("Ingrese nuevamente la opción");
+                break;
+            }
     }
 }
