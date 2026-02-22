@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Hora: (0-23)");
+﻿using System.ComponentModel.Design;
+
+Console.WriteLine("Hora: (0-23)");
 int hora = int.Parse(Console.ReadLine());
 Console.WriteLine("Día: (1-7)");
 int day = int.Parse(Console.ReadLine());
@@ -66,6 +68,27 @@ if ((hora>=0 && hora<=23)&&(day>=1 && day<=7))
                     Console.WriteLine("¿Tiene autorización? 1:Si 2:No");
                     int sino2 = int.Parse(Console.ReadLine());
                     if (sino2 == 1)
+                    {
+                        Console.WriteLine("Acceso permitido");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Acceso denegado");
+                    }
+                }
+                break;
+            }
+        case 3:
+            {
+                if ((hora>=7 && hora<=18)&&(day>=1 && day<=5))
+                {
+                    Console.WriteLine("Acceso permitido");
+                }
+                else
+                {
+                    Console.WriteLine("¿Tiene autorización? 1:Si 2:No");
+                    int sino = int.Parse(Console.ReadLine());
+                    if (sino==1)
                     {
                         Console.WriteLine("Acceso permitido");
                     }
